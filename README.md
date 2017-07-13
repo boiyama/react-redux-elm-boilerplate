@@ -9,6 +9,7 @@
 
 * Node.js - visit https://nodejs.org/en/download/package-manager/
 * Yarn - visit https://yarnpkg.com/en/docs/install
+* Elm - visit https://guide.elm-lang.org/install.html
 
 
 # Usage
