@@ -1,0 +1,63 @@
+{
+  "name": "react-redux-elm-boilerplate",
+  "version": "1.0.0",
+  "dependencies": {
+    "history": "^4.6.2",
+    "material-ui": "^1.0.0-alpha.15",
+    "material-ui-icons": "^1.0.0-alpha.3",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-helmet": "^5.1.3",
+    "react-redux": "^5.0.5",
+    "react-router-dom": "^4.1.1",
+    "react-router-redux": "^5.0.0-alpha.6",
+    "react-tap-event-plugin": "^2.0.1",
+    "redux": "^3.7.0",
+    "redux-elm-middleware": "^4.0.0",
+    "styled-components": "^2.1.0"
+  },
+  "devDependencies": {
+    "babel-plugin-rewire": "^1.1.0",
+    "elm-hot-loader": "^0.5.4",
+    "elm-webpack-loader": "^4.3.1",
+    "enzyme": "^2.8.2",
+    "eslint-config-prettier": "^2.1.1",
+    "eslint-plugin-prettier": "^2.1.2",
+    "flow-bin": "^0.49.1",
+    "nodemon": "^1.11.0",
+    "npm-run-all": "^4.0.2",
+    "prettier": "^1.4.4",
+    "proxyquire": "^1.8.0",
+    "react-scripts": "1.0.10",
+    "react-test-renderer": "^15.6.1",
+    "redux-devtools": "^3.4.0",
+    "redux-devtools-dock-monitor": "^1.1.2",
+    "redux-devtools-log-monitor": "^1.3.0",
+    "redux-mock-store": "^1.2.3"
+  },
+  "scripts": {
+    "install:elm": "elm package install -y && cd tests && elm package install -y",
+    "start": "node react-scripts-interceptor.js start",
+    "build": "node react-scripts-interceptor.js build",
+    "build:demo": "node react-scripts-interceptor.js build:demo",
+    "test": "run-p test:js test:elm:watch",
+    "test:js": "node react-scripts-interceptor.js test --env=jsdom",
+    "test:elm": "elm test",
+    "test:elm:watch": "nodemon --watch src/modules --ext elm --exec elm-test",
+    "eslint": "node_modules/eslint/bin/eslint.js",
+    "eject": "react-scripts eject"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/{components,containers,routes}/**/*.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "statements": 90,
+        "branches": 80,
+        "functions": 90,
+        "lines": 90
+      }
+    }
+  }
+}

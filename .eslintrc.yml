@@ -1,0 +1,38 @@
+extends:
+  - react-app
+  - prettier
+  - prettier/flowtype
+  - prettier/react
+plugins:
+  - prettier
+rules:
+  sort-keys: error
+  sort-vars: error
+  flowtype/no-weak-types: error
+  flowtype/require-valid-file-annotation: error
+  import/order:
+    - error
+    -
+      groups:
+        - builtin
+        - external
+        - internal
+        - parent
+        - sibling
+        - index
+      newlines-between: never
+  prettier/prettier:
+    - error
+    -
+      parser: flow
+      semi: false
+      trailingComma: es5
+  react/sort-comp:
+    - error
+    -
+      order:
+        - type-annotations
+        - static-methods
+        - lifecycle
+        - everything-else
+        - render
