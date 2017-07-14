@@ -46,12 +46,14 @@ const SubTitle = withStyles(
   />
 )
 
+const publicUrl = process.env.PUBLIC_URL ? process.env.PUBLIC_URL : ""
+
 export default () =>
   <Root>
     <Logo width={400} height={100} />
     <Title>React Redux Elm Boilerplate</Title>
     <SubTitle>A delightful boilerplate for reliable webapps.</SubTitle>
-    <Button component={Link} to="/examples" raised color="accent">
+    <Button component={Link} to={`${publicUrl}/examples`} raised color="accent">
       Examples
     </Button>
   </Root>

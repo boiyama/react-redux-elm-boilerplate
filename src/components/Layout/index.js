@@ -14,6 +14,8 @@ const MainContent = styled.div`
     `}
 `
 
+const publicUrl = process.env.PUBLIC_URL ? process.env.PUBLIC_URL : ""
+
 type Props = {
   children?: Children,
   pathname: string,
@@ -36,12 +38,12 @@ export default class Layout extends Component<*, Props, State> {
   }
 
   state = {
-    open: this.props.pathname !== "/",
+    open: this.props.pathname !== `${publicUrl}/`,
   }
 
   componentWillReceiveProps(nextProps: Props) {
     this.setState({
-      open: nextProps.pathname !== "/",
+      open: nextProps.pathname !== `${publicUrl}/`,
     })
   }
 
@@ -54,23 +56,26 @@ export default class Layout extends Component<*, Props, State> {
   }
 
   render() {
+    const { children, pathname } = this.props
+
     const title =
-      this.props.pathname.charAt(1).toUpperCase() + this.props.pathname.slice(2)
+      pathname.charAt(publicUrl.length + 1).toUpperCase() +
+      pathname.slice(publicUrl.length + 2)
 
     return (
       <div>
         <Header
-          home={this.props.pathname === "/"}
+          home={pathname === `${publicUrl}/`}
           title={title}
           onTouchTap={this.handleMenuTap}
         />
         <Navigation
           open={this.state.open}
-          docked={this.props.pathname !== "/"}
+          docked={pathname !== `${publicUrl}/`}
           onRequestClose={this.handleRequestClose}
         />
-        <MainContent padding={this.props.pathname !== "/"}>
-          {this.props.children}
+        <MainContent padding={pathname !== `${publicUrl}/`}>
+          {children}
         </MainContent>
       </div>
     )

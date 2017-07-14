@@ -6,6 +6,8 @@ import Layout from "../components/Layout"
 import Home from "./Home"
 import Examples from "./Examples"
 
+const publicUrl = process.env.PUBLIC_URL ? process.env.PUBLIC_URL : ""
+
 const RouteChildren = ({ location: { pathname } }) =>
   <div>
     <Helmet
@@ -13,8 +15,8 @@ const RouteChildren = ({ location: { pathname } }) =>
       titleTemplate="%s - React Redux Elm Boilerplate"
     />
     <Layout pathname={pathname}>
-      <Route exact path="/" component={Home} />
-      <Route path="/examples" component={Examples} />
+      <Route exact path={`${publicUrl}/`} component={Home} />
+      <Route path={`${publicUrl}/examples`} component={Examples} />
     </Layout>
   </div>
 

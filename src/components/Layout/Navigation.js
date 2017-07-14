@@ -7,6 +7,8 @@ import React from "react"
 import { Link } from "react-router-dom"
 import Logo from "../Logo"
 
+const publicUrl = process.env.PUBLIC_URL ? process.env.PUBLIC_URL : ""
+
 type Props = {
   open: boolean,
   docked: boolean,
@@ -16,8 +18,8 @@ type Props = {
 export default ({ open, docked, onRequestClose }: Props) =>
   <Drawer open={open} docked={docked} onRequestClose={onRequestClose}>
     <Toolbar>
-      <Link to="/"><Logo width={120} height={24} /></Link>
+      <Link to={`${publicUrl}/`}><Logo width={120} height={24} /></Link>
       <Divider absolute />
     </Toolbar>
-    <MenuItem component={Link} to="/examples">Examples</MenuItem>
+    <MenuItem component={Link} to={`${publicUrl}/examples`}>Examples</MenuItem>
   </Drawer>
