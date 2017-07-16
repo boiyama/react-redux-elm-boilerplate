@@ -15,18 +15,23 @@
 # Usage
 
 ```sh
+# installs dependencies
 cd path/to/react-redux-elm-boilerplate
 yarn install
+yarn install:elm
 
 # starts server
 yarn start
 
-# build
+# builds
 yarn build
 
 # tests
 yarn test
 
+# checks code
+yarn eslint
+
 # checks types
-yran flow
+yarn flow
 ```
