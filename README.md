@@ -1,6 +1,6 @@
 # react-redux-elm-boilerplate
 
-[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier) [![Greenkeeper badge](https://badges.greenkeeper.io/boiyaa/react-redux-elm-boilerplate.svg)](https://greenkeeper.io/)
 
 # [Demo](https://boiyaa.github.io/react-redux-elm-boilerplate)
 
